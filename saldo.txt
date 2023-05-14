@@ -1,2 +1,3 @@
 uber;Transporte;17
 feira;Alimentação;2200
+Kabum;Lazer;720
