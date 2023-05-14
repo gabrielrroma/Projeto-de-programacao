@@ -12,6 +12,7 @@ if not arquivoExiste(txt):
 while True:
     #Função menu() para adicionar opções de escolha
     opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria'])
+    
 #Condição para opção desejada
     #Codição 0: Para fechar o programa
     if opcao == 0:
@@ -42,12 +43,15 @@ while True:
                 continue
         valor = input("Digite o valor da transação: ")    
         criarArquivo(txt,nome,categoria,valor)
+        
     #Condição 2: Para listar todas as transações    
     elif opcao == 2:
         leitorArquivo(txt,'Lista de Transações')
+        
     #Condição 3: Para listar transações por categoria    
     elif opcao == 3:
-        arquivoCategoria(txt,'Lista de Transações por categoria')     
+        arquivoCategoria(txt,'Lista de Transações por categoria')  
+    #Caso opção desejada inexistente, roda de novo       
     else:
         print('Tente uma opção válida.')
     sleep(1)    
