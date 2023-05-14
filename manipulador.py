@@ -1,4 +1,4 @@
-from lib.interface import *
+from interface import *
 
 def arquivoExiste(txt):
     try:

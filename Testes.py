@@ -1,5 +1,5 @@
-from lib.interface import *
-from lib.manipulador import *
+from interface import *
+from manipulador import *
 from time import sleep
 
 #Definindo em uma variável qual será o arquivo para guardar transações
