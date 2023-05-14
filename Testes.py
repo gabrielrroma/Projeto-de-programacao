@@ -14,6 +14,7 @@ while True:
     opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações'])
     
 #Condição para opção desejada
+
     #Codição 0: Para fechar o programa
     if opcao == 0:
         print(arrumador('Fechando sistema!'))
