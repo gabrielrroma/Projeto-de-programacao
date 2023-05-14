@@ -11,7 +11,7 @@ if not arquivoExiste(txt):
 #Menu para fazer operações
 while True:
     #Função menu() para adicionar opções de escolha
-    opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria'])
+    opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações'])
     
 #Condição para opção desejada
     #Codição 0: Para fechar o programa
@@ -50,7 +50,12 @@ while True:
         
     #Condição 3: Para listar transações por categoria    
     elif opcao == 3:
-        arquivoCategoria(txt,'Lista de Transações por categoria')  
+        arquivoCategoria(txt,'Lista de Transações por categoria')
+        
+    #Condição 4: Removedor de transações    
+    elif opcao == 4:
+        print(4)
+            
     #Caso opção desejada inexistente, roda de novo       
     else:
         print('Tente uma opção válida.')
