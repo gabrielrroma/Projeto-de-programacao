@@ -5,4 +5,3 @@ comid;Alimentação;34
 Acai;Lazer;12
 Sorvete;Lazer;3.5
 uber;Transporte;22.30
-uber;Transporte;12.86
