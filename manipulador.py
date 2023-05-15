@@ -1,4 +1,5 @@
 from interface import *
+from datetime import *
 
 def arquivoExiste(txt):
     try:
@@ -28,9 +29,11 @@ def leitorArquivo(txt,artxt):
         cont = 1
         for linha in a:
            dado = linha.split(';')
-           dado[2] = dado[2].replace('\n','')
-           print(f'{cont} - Nome: {dado[0]:<33} Categoria: {dado[1]:<33} Valor: {dado[2]:<33}') 
+           dado[4] = dado[4].replace('\n','')
+           text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}') 
+           print(text.center(160))
            cont += 1
+        valorTotal(txt)
     finally:
         a.close()
         
@@ -62,23 +65,32 @@ def arquivoCategoria(txt,artxt):
                 print('Categoria não encontrada.')
                 continue
         cont = 1    
+        total = 0
         for linha in a:
             dado = linha.split(';')
             if dado[1] == categoria:
-                dado[2] = dado[2].replace('\n','')
-                print(f'{cont} - Nome: {dado[0]:<33} Categoria: {dado[1]:<33} Valor: {dado[2]:<33}') 
-                cont += 1
+                dado[4] = dado[4].replace('\n','')
+                text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}')
+                total += valorTotalCat(txt, float(dado[2]))
+                print(text.center(160))
+                cont += 1 
+        tot = (f'Valor total: {total}')
+        print('\n', tot.center(160))       
     finally:
         a.close()             
         
 def adicionarTransacao(txt,nome='',categoria='',valor=0):
     try:
+        now = datetime.now()
+        dia = now.strftime('%d/%m/%Y')
+        hora = now.strftime('%H:%M:%S')
+        
         a = open(txt, 'at')
     except:
         print('Erro.')
     else:
         try:
-            a.write(f'{nome};{categoria};{valor}\n')
+            a.write(f'{nome};{categoria};{valor};{dia};{hora}\n')
         except:
             print('Erro.')
         else:
@@ -97,3 +109,27 @@ def removerArquivo(txt, linha):
         print('Erro ao remover transação.')
     else:
         print('Transação removida com sucesso.')
+        
+def valorTotal(txt):
+    try:
+        a = open(txt, 'rt')
+    except:
+        print('Erro.')
+    else:
+        valorTot = 0
+        for linha in a:
+           dado = linha.split(';')
+           valorTot += float(dado[2])
+        text = (f'Valor Total {valorTot}')
+        print('\n',text.center(160))                   
+    
+def valorTotalCat(txt,dado):
+    try:
+        a = open(txt,'rt')
+    except:
+        print("Erro.") 
+    else:
+        return dado
+               
+           
+                           

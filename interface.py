@@ -11,12 +11,12 @@ def leitorInteiros(txt):
         else:
             return n
         
-def linha(tam = 50):
+def linha(tam = 80):
     return '=-' * tam
 
 def arrumador(txt):
     print(linha())
-    print(txt.center(100))
+    print(txt.center(160))
     print(linha())
     
 def menu(lista):
