@@ -7,3 +7,4 @@ feira de Junho;Alimentação;2200;15/05/2023;17:21:29
 taxi;Transporte;62.33;15/05/2023;17:21:45
 dentista;Saúde;843;15/05/2023;17:22:01
 subway;Lazer;36;15/05/2023;17:22:18
+Pastel;Lazer;120;15/05/2023;19:21:24

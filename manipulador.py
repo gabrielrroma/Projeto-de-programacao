@@ -74,7 +74,7 @@ def arquivoCategoria(txt,artxt):
                 total += valorTotalCat(txt, float(dado[2]))
                 print(text.center(160))
                 cont += 1 
-        tot = (f'Valor total: R${total}')
+        tot = (f'Valor total: R${total:.2f}')
         print('\n', tot.center(160))       
     finally:
         a.close()             
@@ -129,7 +129,7 @@ def valorTotalCat(txt,dado):
     except:
         print("Erro.") 
     else:
-        return dado
+        return float(f'{dado:.2f}')
                
            
                            
