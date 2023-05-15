@@ -2,6 +2,7 @@ Uber;Transporte;17.50
 Feira de Junho;Alimentação;2200.33
 uber;Transporte;21
 comid;Alimentação;34
-VIAGEM;Lazer;5678
 Acai;Lazer;12
 Sorvete;Lazer;3.5
+uber;Transporte;22.30
+uber;Transporte;12.86
