@@ -3,7 +3,7 @@ from manipulador import *
 from time import sleep
 
 #Definindo em uma variável qual será o arquivo para guardar transações
-txt = 'saldo.txt'
+txt = 'transacoes.txt'
 
 if not arquivoExiste(txt):
     criarArquivo(txt)
@@ -17,14 +17,14 @@ while True:
 
     #Codição 0: Para fechar o programa
     if opcao == 0:
-        print(arrumador('Fechando sistema!'))
+        print(arrumador('Até logo!'))
         break
     
     #Condição 1: Para adicionar transações
     elif opcao == 1:
         nome = input("Digite o nome da transação: ")
-        categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
         while True:
+            categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
             if categorias == 'C':
                 categoria = 'Casa'
                 break
@@ -44,7 +44,7 @@ while True:
                 print('Categoria não encontrada.')
                 continue
         valor = input("Digite o valor da transação: ")    
-        criarArquivo(txt,nome,categoria,valor)
+        adicionarTransacao(txt,nome,categoria,valor)
         
     #Condição 2: Para listar todas as transações    
     elif opcao == 2:
@@ -56,7 +56,9 @@ while True:
         
     #Condição 4: Removedor de transações    
     elif opcao == 4:
-        print(4)
+        leitorArquivo(txt, 'Remover arquivo')
+        n = int(input('Digite a transação que deseja remover: '))
+        removerArquivo(txt, n)
             
     #Caso opção desejada inexistente, roda de novo       
     else:
