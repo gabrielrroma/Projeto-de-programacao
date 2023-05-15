@@ -1,7 +1,0 @@
-uber;Transporte;17
-feira;Alimentação;2200
-Kabum;Lazer;720
-GPU;Casa;6200
-Feira de Maio;Casa;3200
-Feira de junho;Alimentação;1750
-uber;Transporte;22
