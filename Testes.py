@@ -17,7 +17,7 @@ while True:
 
     #Codição 0: Para fechar o programa
     if opcao == 0:
-        print(arrumador('Até logo!'))
+        arrumador('Até logo!')
         break
     #Condição 1: Para adicionar transações
     elif opcao == 1:
