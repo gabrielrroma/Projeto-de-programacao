@@ -1,5 +1,9 @@
 uber;Transporte;8;15/05/2023;09:55:25
 uber;Transporte;54;15/05/2023;10:17:24
-Feira de junho;Casa;2200;15/05/2023;10:18:29
 99pop;Transporte;8.50;15/05/2023;10:43:57
 uber;Transporte;12.50;15/05/2023;13:01:29
+Feira de Maio;Alimentação;1532.84;15/05/2023;17:21:07
+feira de Junho;Alimentação;2200;15/05/2023;17:21:29
+taxi;Transporte;62.33;15/05/2023;17:21:45
+dentista;Saúde;843;15/05/2023;17:22:01
+subway;Lazer;36;15/05/2023;17:22:18
