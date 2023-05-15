@@ -30,7 +30,7 @@ def leitorArquivo(txt,artxt):
         for linha in a:
            dado = linha.split(';')
            dado[4] = dado[4].replace('\n','')
-           text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}') 
+           text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: R$ {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}') 
            print(text.center(160))
            cont += 1
         valorTotal(txt)
@@ -70,11 +70,11 @@ def arquivoCategoria(txt,artxt):
             dado = linha.split(';')
             if dado[1] == categoria:
                 dado[4] = dado[4].replace('\n','')
-                text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}')
+                text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: R$ {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}')
                 total += valorTotalCat(txt, float(dado[2]))
                 print(text.center(160))
                 cont += 1 
-        tot = (f'Valor total: {total}')
+        tot = (f'Valor total: R${total}')
         print('\n', tot.center(160))       
     finally:
         a.close()             
@@ -120,7 +120,7 @@ def valorTotal(txt):
         for linha in a:
            dado = linha.split(';')
            valorTot += float(dado[2])
-        text = (f'Valor Total {valorTot}')
+        text = (f'Valor Total R$ {valorTot}')
         print('\n',text.center(160))                   
     
 def valorTotalCat(txt,dado):
