@@ -3,7 +3,7 @@ from manipulador import *
 from time import sleep
 
 #Definindo em uma variável qual será o arquivo para guardar transações
-txt = 'saldo.txt'
+txt = 'transacoes.txt'
 
 if not arquivoExiste(txt):
     criarArquivo(txt)
