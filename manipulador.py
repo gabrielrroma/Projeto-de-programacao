@@ -25,10 +25,12 @@ def leitorArquivo(txt,artxt):
         print('Erro')
     else:
         arrumador(artxt)
+        cont = 1
         for linha in a:
            dado = linha.split(';')
            dado[2] = dado[2].replace('\n','')
-           print(f'Nome: {dado[0]:<33} Categoria: {dado[1]:<33} Valor: {dado[2]:<33}') 
+           print(f'{cont} - Nome: {dado[0]:<33} Categoria: {dado[1]:<33} Valor: {dado[2]:<33}') 
+           cont += 1
     finally:
         a.close()
         
@@ -39,8 +41,8 @@ def arquivoCategoria(txt,artxt):
         print('erro.')
     else:
         arrumador(artxt)
-        categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
         while True:
+            categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
             if categorias == 'C':
                 categoria = 'Casa'
                 break
@@ -59,15 +61,17 @@ def arquivoCategoria(txt,artxt):
             else: 
                 print('Categoria não encontrada.')
                 continue
+        cont = 1    
         for linha in a:
             dado = linha.split(';')
             if dado[1] == categoria:
                 dado[2] = dado[2].replace('\n','')
-                print(f'Nome: {dado[0]:<33} Categoria: {dado[1]:<33} Valor: {dado[2]:<33}') 
+                print(f'{cont} - Nome: {dado[0]:<33} Categoria: {dado[1]:<33} Valor: {dado[2]:<33}') 
+                cont += 1
     finally:
         a.close()             
         
-def criarArquivo(txt,nome='',categoria='',valor=0):
+def adicionarTransacao(txt,nome='',categoria='',valor=0):
     try:
         a = open(txt, 'at')
     except:
@@ -79,4 +83,17 @@ def criarArquivo(txt,nome='',categoria='',valor=0):
             print('Erro.')
         else:
             print('Novo valor adicionado')
-            a.close()            
+            a.close()       
+            
+def removerArquivo(txt, linha):
+    try:
+        with open(txt, 'r') as arquivo:
+            a = arquivo.readlines()
+        with open(txt, 'w') as arquivo:
+            for i, l in enumerate(a):
+                if i != linha - 1:
+                    arquivo.write(l)
+    except IOError:
+        print('Erro ao remover transação.')
+    else:
+        print('Transação removida com sucesso.')
