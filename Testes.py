@@ -19,6 +19,7 @@ while True:
     if opcao == 0:
         print(arrumador('Fechando sistema!'))
         break
+    
     #Condição 1: Para adicionar transações
     elif opcao == 1:
         nome = input("Digite o nome da transação: ")
@@ -60,4 +61,4 @@ while True:
     #Caso opção desejada inexistente, roda de novo       
     else:
         print('Tente uma opção válida.')
-    sleep(1)    
+    sleep(1)
