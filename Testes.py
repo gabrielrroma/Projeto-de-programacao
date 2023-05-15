@@ -1,5 +1,8 @@
+#Importando funções do código de outros arquivos na mesma pasta
 from interface import *
 from manipulador import *
+
+#Importando a função Sleep
 from time import sleep
 
 #Definindo em uma variável qual será o arquivo para guardar transações
@@ -10,6 +13,7 @@ if not arquivoExiste(txt):
 
 #Menu para fazer operações
 while True:
+    
     #Função menu() para adicionar opções de escolha
     opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações'])
     
@@ -63,4 +67,5 @@ while True:
     #Caso opção desejada inexistente, roda de novo       
     else:
         print('Tente uma opção válida.')
+        
     sleep(1)
