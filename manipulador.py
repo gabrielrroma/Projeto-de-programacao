@@ -85,7 +85,7 @@ def adicionarTransacao(txt,nome='',categoria='',valor=0):
         dia = now.strftime('%d/%m/%Y')
         hora = now.strftime('%H:%M:%S')
         
-        a = open(txt, 'at')
+        a = open(txt, 'at', encoding='utf-8')
     except:
         print('Erro.')
     else:
