@@ -39,7 +39,7 @@ def leitorArquivo(txt,artxt):
         
 def arquivoCategoria(txt,artxt):
     try:
-        a = open(txt, 'rt')
+        a = open(txt, 'rt', encoding='utf-8')
     except:
         print('erro.')
     else:
@@ -99,7 +99,7 @@ def adicionarTransacao(txt,nome='',categoria='',valor=0):
             
 def removerArquivo(txt, linha):
     try:
-        with open(txt, 'r') as arquivo:
+        with open(txt, 'r', encoding='utf-8') as arquivo:
             a = arquivo.readlines()
         with open(txt, 'w') as arquivo:
             for i, l in enumerate(a):
@@ -112,7 +112,7 @@ def removerArquivo(txt, linha):
         
 def valorTotal(txt):
     try:
-        a = open(txt, 'rt')
+        a = open(txt, 'rt', encoding='utf-8')
     except:
         print('Erro.')
     else:
@@ -125,7 +125,7 @@ def valorTotal(txt):
     
 def valorTotalCat(txt,dado):
     try:
-        a = open(txt,'rt')
+        a = open(txt,'rt',encoding='utf-8')
     except:
         print("Erro.") 
     else:
