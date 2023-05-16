@@ -3,7 +3,7 @@ from datetime import *
 
 def arquivoExiste(txt):
     try:
-        a = open(txt, 'rt')
+        a = open(txt, 'rt', encoding='utf-8')
         a.close()
     except FileNotFoundError:
         return False
@@ -12,7 +12,7 @@ def arquivoExiste(txt):
 
 def criarArquivo(txt):
     try:
-        a = open(txt, 'wt+')
+        a = open(txt, 'wt+', encoding='utf-8')
         a.close()
     except:
         print('Erro ao criar arquivo')
@@ -21,7 +21,7 @@ def criarArquivo(txt):
         
 def leitorArquivo(txt,artxt):
     try:
-        a = open(txt, 'rt')
+        a = open(txt, 'rt', encoding='utf-8')
     except:
         print('Erro')
     else:
