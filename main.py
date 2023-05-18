@@ -58,7 +58,7 @@ while True:
         
     #Condição 3: Para listar transações por categoria    
     elif opcao == 3:
-        arquivoCategoria(txt,'Lista de Transações por categoriaa')
+        arquivoCategoria(txt,'Lista de Transações por categoria')
         
     #Condição 4: Removedor de transações    
     elif opcao == 4:
