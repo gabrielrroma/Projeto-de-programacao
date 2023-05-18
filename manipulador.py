@@ -151,15 +151,15 @@ def adicionarSaldo():
     try:
         a = open('saldo.csv', 'rt')
         total = float(a.read())
-        print(total)
     except:
         print('Erro')
     else:        
         N = float(input("Digite o valor a ser adicionado: "))
         total += N
+        total = (f'{total:.2f}')
         a.close()
         a = open('saldo.csv', 'wt')
-        a.write(str(total))
+        a.write(total)
     finally:
         print('Valor adicionado com sucesso!')
         a.close()    
