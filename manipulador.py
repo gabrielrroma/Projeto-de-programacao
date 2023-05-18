@@ -1,6 +1,14 @@
 from interface import *
 from datetime import *
 
+saldocsv = 'saldo.csv'
+transacoescsv = 'transacoes.csv'
+
+def saldo(saldo):
+    osaldo = open(saldo,'rt')
+    valor = osaldo.read()
+    return float(valor)
+
 def arquivoExiste(txt):
     try:
         a = open(txt, 'rt', encoding='utf-8')
@@ -80,22 +88,30 @@ def arquivoCategoria(txt,artxt):
         a.close()             
         
 def adicionarTransacao(txt,nome='',categoria='',valor=0):
-    try:
-        now = datetime.now()
-        dia = now.strftime('%d/%m/%Y')
-        hora = now.strftime('%H:%M:%S')
-        
-        a = open(txt, 'at', encoding='utf-8')
-    except:
-        print('Erro.')
-    else:
+    nsaldo = saldo(saldocsv)
+    if nsaldo < float(valor):
+        print('Você não tem dinheiro pra essa transação.')
+    else:        
         try:
-            a.write(f'{nome};{categoria};{valor};{dia};{hora}\n')
+            now = datetime.now()
+            dia = now.strftime('%d/%m/%Y')
+            hora = now.strftime('%H:%M:%S')
+            
+            a = open(txt, 'at', encoding='utf-8')
         except:
             print('Erro.')
         else:
-            print('Novo valor adicionado')
-            a.close()       
+                try:
+                    a.write(f'{nome};{categoria};{valor};{dia};{hora}\n')
+                except:
+                    print('Erro.')
+                else:    
+                    nsaldo -= float(valor)
+                    b = open(saldocsv, 'wt')
+                    b.write(str(nsaldo))
+                    print('Novo valor adicionado')
+                    b.close()
+                    a.close()       
             
 def removerArquivo(txt, linha):
     try:
@@ -131,5 +147,19 @@ def valorTotalCat(txt,dado):
     else:
         return float(f'{dado:.2f}')
                
-           
-                           
+def adicionarSaldo():
+    try:
+        a = open('saldo.csv', 'rt')
+        total = float(a.read())
+        print(total)
+    except:
+        print('Erro')
+    else:        
+        N = float(input("Digite o valor a ser adicionado: "))
+        total += N
+        a.close()
+        a = open('saldo.csv', 'wt')
+        a.write(str(total))
+    finally:
+        print('Valor adicionado com sucesso!')
+        a.close()    

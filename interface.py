@@ -1,3 +1,11 @@
+saldocsv = 'saldo.csv'
+transacoescsv = 'transacoes.csv'
+
+def saldo(saldo):
+    osaldo = open(saldo,'rt')
+    valor = osaldo.read()
+    return float(valor)
+
 def leitorInteiros(txt):
     while True:
         try:
@@ -21,6 +29,7 @@ def arrumador(txt):
     
 def menu(lista):
     arrumador('Sistema de Rastreamento de Despesas Pessoais.')
+    print('Saldo:', saldo('saldo.csv'))
     cont = 0
     for item in lista:
         print(f'{cont} - {item}')

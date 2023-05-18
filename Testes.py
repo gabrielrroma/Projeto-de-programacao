@@ -1,12 +1,14 @@
 #Importando funções do código de outros arquivos na mesma pasta
 from interface import *
 from manipulador import *
+import os
+os.system('cls')
 
 #Importando a função Sleep
 from time import sleep
 
 #Definindo em uma variável qual será o arquivo para guardar transações
-txt = 'transacoes.txt'
+txt = 'transacoes.csv'
 
 if not arquivoExiste(txt):
     criarArquivo(txt)
@@ -15,7 +17,7 @@ if not arquivoExiste(txt):
 while True:
     
     #Função menu() para adicionar opções de escolha
-    opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações'])
+    opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações','Adicionar ao saldo'])
     
 #Condição para opção desejada
 
@@ -63,6 +65,10 @@ while True:
         leitorArquivo(txt, 'Remover arquivo')
         n = int(input('Digite a transação que deseja remover: '))
         removerArquivo(txt, n)
+        
+    #Condição 5: Adicionar débito a conta    
+    elif opcao == 5:
+        adicionarSaldo()    
             
     #Caso opção desejada inexistente, roda de novo       
     else:
