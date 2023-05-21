@@ -17,7 +17,7 @@ if not arquivoExiste(txt):
 while True:
     
     #Função menu() para adicionar opções de escolha
-    opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações','Adicionar ao saldo'])
+    opcao = menu(['Sair','Adicionar transação','Listar transações','Listar transações por categoria','Remover transações','Modificar transação','Adicionar ao saldo'])
     
 #Condição para opção desejada
 
@@ -29,28 +29,9 @@ while True:
     #Condição 1: Para adicionar transações
     elif opcao == 1:
         nome = input("Digite o nome da transação: ")
-        while True:
-            categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
-            if categorias == 'C':
-                categoria = 'Casa'
-                break
-            elif categorias == 'T':
-                categoria = 'Transporte'
-                break
-            elif categorias == 'S':
-                categoria = 'Saúde'
-                break
-            elif categorias == 'L':
-                categoria = 'Lazer'
-                break
-            elif categorias == 'A':
-                categoria = 'Alimentação'
-                break
-            else: 
-                print('Categoria não encontrada.')
-                continue
+        cat = categoria()
         valor = input("Digite o valor da transação: ")    
-        adicionarTransacao(txt,nome,categoria,valor)
+        adicionarTransacao(txt,nome,cat,valor)
         
     #Condição 2: Para listar todas as transações    
     elif opcao == 2:
@@ -66,8 +47,16 @@ while True:
         n = int(input('Digite a transação que deseja remover: '))
         removerArquivo(txt, n)
         
-    #Condição 5: Adicionar débito a conta    
+    #Condição 5: Modificador de transações            
     elif opcao == 5:
+        leitorArquivo(txt,'Modificador de transação')
+        n = int(input('Que transação da lista deseja modificar?'))
+        nomeNovo = input('Digite o novo nome: ')
+        cat = categoria()
+        alterarTransacao(txt,n,nomeNovo,cat)
+        
+    #Condição 6: Adicionar débito a conta    
+    elif opcao == 6:
         adicionarSaldo()    
             
     #Caso opção desejada inexistente, roda de novo       

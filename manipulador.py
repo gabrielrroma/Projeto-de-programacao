@@ -4,6 +4,30 @@ from datetime import *
 saldocsv = 'saldo.csv'
 transacoescsv = 'transacoes.csv'
 
+
+def categoria():
+    while True:
+            categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
+            if categorias == 'C':
+                categoria = 'Casa'
+                break
+            elif categorias == 'T':
+                categoria = 'Transporte'
+                break
+            elif categorias == 'S':
+                categoria = 'Saúde'
+                break
+            elif categorias == 'L':
+                categoria = 'Lazer'
+                break
+            elif categorias == 'A':
+                categoria = 'Alimentação'
+                break
+            else: 
+                print('Categoria não encontrada.')
+                continue
+    return categoria        
+
 def saldo(saldo):
     osaldo = open(saldo,'rt')
     valor = osaldo.read()
@@ -52,31 +76,12 @@ def arquivoCategoria(txt,artxt):
         print('erro.')
     else:
         arrumador(artxt)
-        while True:
-            categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
-            if categorias == 'C':
-                categoria = 'Casa'
-                break
-            elif categorias == 'T':
-                categoria = 'Transporte'
-                break
-            elif categorias == 'S':
-                categoria = 'Saúde'
-                break
-            elif categorias == 'L':
-                categoria = 'Lazer'
-                break
-            elif categorias == 'A':
-                categoria = 'Alimentação'
-                break
-            else: 
-                print('Categoria não encontrada.')
-                continue
+        cat = categoria()
         cont = 1    
         total = 0
         for linha in a:
             dado = linha.split(';')
-            if dado[1] == categoria:
+            if dado[1] == cat:
                 dado[4] = dado[4].replace('\n','')
                 text = (f'{cont} - Nome: {dado[0]:<20} Categoria: {dado[1]:<20} Valor: R$ {dado[2]:<20} Dia: {dado[3]:<20} Hora: {dado[4]:<20}')
                 total += valorTotalCat(txt, float(dado[2]))
@@ -162,4 +167,21 @@ def adicionarSaldo():
         a.write(total)
     finally:
         print('Valor adicionado com sucesso!')
-        a.close()    
+        a.close()
+        
+def alterarTransacao(txt, linha, novo_nome, nova_categoria):
+    try:
+        with open(txt, 'r', encoding='utf-8') as arquivo:
+            linhas = arquivo.readlines()
+
+        if linha >= 1 and linha <= len(linhas):
+            linhas[linha-1] = f'{novo_nome};{nova_categoria};{linhas[linha-1].split(";")[2]};{linhas[linha-1].split(";")[3]};{linhas[linha-1].split(";")[4]}'
+
+            with open(txt, 'w', encoding='utf-8') as arquivo:
+                arquivo.writelines(linhas)
+
+            print('Transação alterada com sucesso.')
+        else:
+            print('Número de linha inválido.')
+    except IOError:
+        print('Erro ao alterar transação.')            
