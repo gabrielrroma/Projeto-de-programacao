@@ -7,8 +7,7 @@ e com isso nosso projeto teve inicio para desenvolvimento
 O Objetivo do nosso progama é ajudar o usuario a melhor controlar suas finanças e organizar suas tranzações por categorias para ter uma
 ideia melhor de seus gastos!
 
-
-#regras do progama
+# Regras do progama
 -O usuario devera inserir qual tipo de transação você deseja iniciar.
  a transisção estara dividia entre lazer,transoporte,saude,casa e alimento
  assim que o usuario escolher a categoria ele informara a transação sobre quanto ele ira gastar em certa transação 
