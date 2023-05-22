@@ -12,16 +12,16 @@ ideia melhor de seus gastos!
  a transisção estara dividia entre lazer,transoporte,saude,casa e alimento
  assim que o usuario escolher a categoria ele informara a transação sobre quanto ele ira gastar em certa transação 
  -Se o usuario não colocar o tipo ou um tipo que não existe o progama ira exibir um erro
- 
+O progama mostrara as categorias caso o usuario pedir, e mostrara a data e hora da transação
  
 Ex: eu escolho lazer, e vou comprar um fone de ouvido novo que custa R$45 reais.
-    então as entradas seriam: 
-      Adicionar transação
-      tipo lazer
-      nome:Fone de ouvido muito caro
-      valor R$ 45,00
+    então as entradas seriam:
+------Adicionar transação
+------tipo lazer
+------nome:Fone de ouvido muito caro
+------valor R$ 45,00
 
-O progama mostrara as categorias caso o usuario pedir, e mostrara a data e hora da transação
+
 
 
 
