@@ -6,6 +6,8 @@ e com isso nosso projeto teve inicio para desenvolvimento
 # O objetivo:
 O Objetivo do nosso progama é ajudar o usuario a melhor controlar suas finanças e organizar suas tranzações por categorias para ter uma
 ideia melhor de seus gastos!
+
+
 #regras do progama
 
 
