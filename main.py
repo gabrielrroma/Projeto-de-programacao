@@ -28,6 +28,7 @@ while True:
     
     #Condição 1: Para adicionar transações
     elif opcao == 1:
+        arrumador('Adicionar transação')
         nome = input("Digite o nome da transação: ")
         cat = categoria()
         valor = input("Digite o valor da transação: ")    
@@ -57,6 +58,7 @@ while True:
         
     #Condição 6: Adicionar débito a conta    
     elif opcao == 6:
+        arrumador('Adicionar saldo')
         adicionarSaldo()    
             
     #Caso opção desejada inexistente, roda de novo       
