@@ -9,8 +9,8 @@ ideia melhor de seus gastos!
 
 
 #regras do progama
-
-
+-O usuario devera inserir qual tipo de transação você deseja iniciar.
+ a transisção estara dividia entre lazer, 
 
 
 
