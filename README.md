@@ -11,7 +11,10 @@ ideia melhor de seus gastos!
 #regras do progama
 -O usuario devera inserir qual tipo de transação você deseja iniciar.
  a transisção estara dividia entre lazer,transoporte,saude,casa e alimento
- assim que o usuario escolher o progama 
+ assim que o usuario escolher a categoria ele informara a transação sobre quanto ele ira gastar em certa transação 
+ 
+Ex: eu escolho lazer, e vou comprar um fone de ouvido novo que custa R$45 reais.
+    então as entradas seriam: 
 
 
 
