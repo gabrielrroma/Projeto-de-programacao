@@ -1,4 +1,4 @@
-# Projeto-de-programacao
+# Sistema de Rastreamentos de Dispesas Pessoais(SRDP)
 
 #esse projeto é um exercicio de progamação que foi iniciado no dia 5 de maio onde nos tivemos a nossa primeira reunião 
 e com isso nosso projeto teve inicio para desenvolvimento
@@ -12,12 +12,26 @@ ideia melhor de seus gastos!
 -O usuario devera inserir qual tipo de transação você deseja iniciar.
  a transisção estara dividia entre lazer,transoporte,saude,casa e alimento
  assim que o usuario escolher a categoria ele informara a transação sobre quanto ele ira gastar em certa transação 
+ -Se o usuario não colocar o tipo ou um tipo que não existe o progama ira exibir um erro
+ 
  
 Ex: eu escolho lazer, e vou comprar um fone de ouvido novo que custa R$45 reais.
     então as entradas seriam: 
       Adicionar transação
-      tipo lazer 
-      
+      tipo lazer
+      nome:Fone de ouvido muito caro
+      valor R$ 45,00
+
+O progama mostrara as categorias caso o usuario pedir, e mostrara a data e hora da transação
+
+
+
+
+
+
+
+
+
 
 
 
