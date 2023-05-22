@@ -15,7 +15,9 @@ ideia melhor de seus gastos!
  
 Ex: eu escolho lazer, e vou comprar um fone de ouvido novo que custa R$45 reais.
     então as entradas seriam: 
-
+      Adicionar transação
+      tipo lazer 
+      
 
 
 
