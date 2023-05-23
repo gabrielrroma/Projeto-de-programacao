@@ -130,7 +130,7 @@ def removerArquivo(txt, linha):
     try:
         with open(txt, 'r', encoding='utf-8') as arquivo:
             a = arquivo.readlines()
-        with open(txt, 'w') as arquivo:
+        with open(txt, 'w', encoding='utf-8') as arquivo:
             for i, l in enumerate(a):
                 if i != linha - 1:
                     arquivo.write(l)
@@ -150,7 +150,7 @@ def valorTotal(txt):
         for linha in a:
            dado = linha.split(';')
            valorTot += float(dado[2])
-        text = (f'Valor Total R$ {valorTot}')
+        text = (f'Valor Total R$ {valorTot:.2f}')
         print('\n',text.center(160))                   
 
 # Mostra valor total filtrado por categoria    
