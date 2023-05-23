@@ -1,10 +1,11 @@
 from interface import *
 from datetime import *
 
+# Variaveis para nome de arquivo
 saldocsv = 'saldo.csv'
 transacoescsv = 'transacoes.csv'
 
-
+# Função para leitura de categoria por sua primeira letra
 def categoria():
     while True:
             categorias = input("Categoria da transação((C)Casa, (T)Transporte, (S)Saúde, (L)Lazer, (A)Alimentação): ").upper()
@@ -28,11 +29,13 @@ def categoria():
                 continue
     return categoria        
 
+# Função para mostrar saldo
 def saldo(saldo):
     osaldo = open(saldo,'rt')
     valor = osaldo.read()
     return float(valor)
 
+# Função para checar existencia de um arquivo
 def arquivoExiste(txt):
     try:
         a = open(txt, 'rt', encoding='utf-8')
@@ -42,6 +45,7 @@ def arquivoExiste(txt):
     else:
         return True    
 
+# Cria arquivo caso não exista
 def criarArquivo(txt):
     try:
         a = open(txt, 'wt+', encoding='utf-8')
@@ -50,7 +54,8 @@ def criarArquivo(txt):
         print('Erro ao criar arquivo')
     else: 
         print(f'Arquivo {txt} criado.')
-        
+
+# Leitor de arquivo para organização de dados do arquivo        
 def leitorArquivo(txt,artxt):
     try:
         a = open(txt, 'rt', encoding='utf-8')
@@ -69,6 +74,7 @@ def leitorArquivo(txt,artxt):
     finally:
         a.close()
         
+# Mesmo que leitorArquivo() porém com filtro de categoria        
 def arquivoCategoria(txt,artxt):
     try:
         a = open(txt, 'rt', encoding='utf-8')
@@ -92,6 +98,7 @@ def arquivoCategoria(txt,artxt):
     finally:
         a.close()             
         
+# Cria transação para adicionar ao arquivo dividindo por (nome,categoria,valor,data,hora)        
 def adicionarTransacao(txt,nome='',categoria='',valor=0):
     nsaldo = saldo(saldocsv)
     if nsaldo < float(valor):
@@ -117,7 +124,8 @@ def adicionarTransacao(txt,nome='',categoria='',valor=0):
                     print('Novo valor adicionado')
                     b.close()
                     a.close()       
-            
+          
+# Remove trasação do arquivo com escolha de opção            
 def removerArquivo(txt, linha):
     try:
         with open(txt, 'r', encoding='utf-8') as arquivo:
@@ -130,7 +138,8 @@ def removerArquivo(txt, linha):
         print('Erro ao remover transação.')
     else:
         print('Transação removida com sucesso.')
-        
+
+# Mostra saldo total       
 def valorTotal(txt):
     try:
         a = open(txt, 'rt', encoding='utf-8')
@@ -143,7 +152,8 @@ def valorTotal(txt):
            valorTot += float(dado[2])
         text = (f'Valor Total R$ {valorTot}')
         print('\n',text.center(160))                   
-    
+
+# Mostra valor total filtrado por categoria    
 def valorTotalCat(txt,dado):
     try:
         a = open(txt,'rt',encoding='utf-8')
@@ -152,6 +162,7 @@ def valorTotalCat(txt,dado):
     else:
         return float(f'{dado:.2f}')
                
+# Atualiza o valor do saldo                
 def adicionarSaldo():
     try:
         a = open('saldo.csv', 'rt')
@@ -168,7 +179,8 @@ def adicionarSaldo():
     finally:
         print('Valor adicionado com sucesso!')
         a.close()
-        
+
+# Modifica trasação do arquivo        
 def alterarTransacao(txt, linha, novo_nome, nova_categoria):
     try:
         with open(txt, 'r', encoding='utf-8') as arquivo:
