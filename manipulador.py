@@ -176,7 +176,6 @@ def adicionarSaldo():
         a.close()
         a = open('saldo.csv', 'wt')
         a.write(total)
-    finally:
         print('Valor adicionado com sucesso!')
         a.close()
 
